@@ -14,8 +14,8 @@ source ~/.profile
 
 #zookeeper and kafka
 echo Starting Zookeeper and Kafka...
-echo zookeeper-server-start ~/confluent-6.0.1/etc/kafka/zookeeper.properties > 1.startZookeeper.sh
-echo kafka-server-start ~/confluent-6.0.1/etc/kafka/server.properties > 2.startKafka.sh
+echo "~/confluent-6.0.1/bin/zookeeper-server-start ~/confluent-6.0.1/etc/kafka/zookeeper.properties 2>&1 &" > 1.startZookeeper.sh
+echo "~/confluent-6.0.1/bin/kafka-server-start ~/confluent-6.0.1/etc/kafka/server.properties  2>&1 &" > 2.startKafka.sh
 
 echo done setup and config
 
