@@ -1,5 +1,5 @@
 echo updating Repo...
-echo Y | sudo apt update && echo Y | sudo apt install openjdk-11-jdk
+echo Y | sudo apt update && echo Y | sudo apt install openjdk-11-jdk openjdk-11-jre
 echo downloading confluent...
 wget https://packages.confluent.io/archive/6.0/confluent-community-6.0.1.tar.gz
 tar -xzf confluent-community-6.0.1.tar.gz
@@ -15,9 +15,8 @@ source ~/.profile
 #zookeeper and kafka
 echo Starting Zookeeper and Kafka...
 echo zookeeper-server-start ~/confluent-6.0.1/etc/kafka/zookeeper.properties > 1.startZookeeper.sh
-chmod +x startZookeeper.sh
 echo kafka-server-start ~/confluent-6.0.1/etc/kafka/server.properties > 2.startKafka.sh
-chmod +x startKafka.sh
+
 echo done setup and config
 
 #generate Startup script
@@ -25,4 +24,4 @@ echo "kafka-topics --create --topic csv --zookeeper localhost:2181 --partitions 
 "cd ~/confluent-6.0.1/" \
 "echo y| confluent-hub install jcustenborder/kafka-connect-spooldir:latest"\
 "connect-distributed ./etc/kafka/connect-distributed.properties" >> 3.final.sh
-chmod +x final.sh
+chmod +x *.sh
