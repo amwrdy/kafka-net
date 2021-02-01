@@ -6,7 +6,7 @@ tar -xzf confluent-community-6.0.1.tar.gz
 wget http://client.hub.confluent.io/confluent-hub-client-latest.tar.gz 
 mkdir confluenthub && mv confluent-hub-client-latest.tar.gz confluenthub/
 cd confluenthub/
-tar -xzf /confluent-hub-client-latest.tar.gz
+tar -xzf confluent-hub-client-latest.tar.gz
 cd ..
 echo 'export PATH=$PATH:~/confluent-6.0.1/bin' >> ~/.profile
 echo 'export PATH=$PATH:~/confluenthub/bin' >> ~/.profile
