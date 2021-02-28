@@ -1,16 +1,16 @@
 echo updating Repo...
-echo Y | sudo apt update && echo Y | sudo apt install openjdk-11-jdk openjdk-11-jre
+echo Y | sudo yum update && echo Y | sudo yum install java-11-openjdk-devel
+echo y |sudo yum install wget
 echo downloading confluent...
 wget https://packages.confluent.io/archive/6.0/confluent-community-6.0.1.tar.gz
 tar -xzf confluent-community-6.0.1.tar.gz
 wget http://client.hub.confluent.io/confluent-hub-client-latest.tar.gz 
 mkdir confluenthub && mv confluent-hub-client-latest.tar.gz confluenthub/
-cd confluenthub/
-tar -xzf confluent-hub-client-latest.tar.gz
-cd ..
+tar -xzf confluenthub/confluent-hub-client-latest.tar.gz
 echo 'export PATH=$PATH:~/confluent-6.0.1/bin' >> ~/.profile
 echo 'export PATH=$PATH:~/confluenthub/bin' >> ~/.profile
 source ~/.profile
+
 
 #zookeeper and kafka
 echo Starting Zookeeper and Kafka...
