@@ -9,7 +9,7 @@ mkdir confluenthub && mv confluent-hub-client-latest.tar.gz confluenthub/
 tar -xzf confluenthub/confluent-hub-client-latest.tar.gz
 echo 'export PATH=$PATH:~/confluent-6.0.1/bin' >> ~/.profile
 echo 'export PATH=$PATH:~/confluenthub/bin' >> ~/.profile
-source ~/.profile
+source ~/.profile 
 
 
 #zookeeper and kafka
